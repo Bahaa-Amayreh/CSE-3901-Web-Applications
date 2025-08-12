@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Block and Inline Elements in HTML</title>
+    <style>
+        /* Container for all color boxes */
+        .color-container {
+            background-color: yellow;
+            width: 350px;
+        }
+
+        /* Generic box styles */
+        .box {
+            height: 100px;
+            width: 100px;
+        }
+
+        /* Modifiers for box colors */
+        .box--red {
+            background-color: red;
+        }
+
+        .box--green {
+            background-color: green;
+        }
+
+        .box--blue {
+            background-color: blue;
+        }
+
+        /* Paragraph style */
+        .text-highlight {
+            background-color: rgb(231, 232, 238);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="color-container">
+        <div class="box box--red"></div>
+        <div class="box box--green"></div>
+        <div class="box box--blue"></div>
+    </div>
+
+    <p class="text-highlight">
+        Lorem ipsum  <strong>adipisicing elit</strong>. 
+        <p>Voluptate nisi ducimus adipisci doloribus atque! Molestiae hic.</p> 
+        <p> <i>voluptates est in expedita eius commodi</i> laborum animi accusantium</p>
+       <sub>nemo</sub>, natus. Corporis iste laborum <sup>veniam?</sup>
+    </p>
+</body>
+
+</html>
