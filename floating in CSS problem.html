@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Block and Inline Elements in HTML</title>
+    <style>
+        /* Container for all color boxes */
+        .color-container {
+            background-color: yellow;
+            width: 350px;
+        }
+
+        /* Generic box styles */
+        .box {
+            height: 100px;
+            width: 100px;
+        }
+
+        /* Modifiers for box colors */
+        .box-red {
+            background-color: red;
+        }
+
+        .box-green {
+            background-color: green;
+        }
+
+        .box-blue {
+            background-color: blue;
+        }
+
+        /* Paragraph style */
+        .text-highlight {
+            background-color: rgb(231, 232, 238);
+        }
+
+        #box-float-left {
+            float: left;
+        }
+
+        #box-float-right {
+            float: right;
+        }
+
+        #box-float-clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="color-container">
+        <div class="box box-red" id="box-float-right" ></div>
+        <div class="box box-green" id="box-float-left" ></div>
+        <div class="box box-blue" id="box-float-clear">
+        </div>
+    </div>
+</body>
+
+</html>
