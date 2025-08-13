@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Grid Area</title>
+    <style>
+        #container {
+            display: grid;
+            /*repeat (4,1fr)*/
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: repeat(5, 100px);
+            text-align: center;
+            grid-gap: 2px;
+            grid-template-areas:
+                "header header header header"
+                "aside aside . article"
+                "nav nav . article"
+                "sec sec . article"
+                "footer footer footer footer";
+            /*controls the alignment of grid items along the row axis (horizontal).  */
+            /* justify-items: normal; */
+            /* controls the alignment of grid items along the column axis (vertical) */
+            /* align-items: stretch; */
+            /* align-content: space-around; */
+        }
+
+        #container>* {
+            background: rgb(232, 176, 9);
+            padding: 15px;
+            color: white;
+            border: 2px solid rgb(27, 27, 26);
+        }
+
+        header {
+            grid-area: header;
+        }
+
+        section {
+            grid-area: sec;
+        }
+
+        aside {
+            grid-area: aside;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        article {
+            grid-area: article;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>Header</header>
+        <aside>Aside</aside>
+        <article>Article</article>
+        <nav>Nav</nav>
+        <footer>Footer</footer>
+        <section>Section</section>
+    </div>
+</body>
+
+</html>
