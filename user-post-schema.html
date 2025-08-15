@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Schema Documentation</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --danger-color: #e74c3c;
+            --warning-color: #f39c12;
+            --border-radius: 6px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .schema-section {
+            margin-bottom: 50px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+
+        .schema-header {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: var(--dark-color);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .pk {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .fk {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .not-null {
+            position: relative;
+        }
+
+        .not-null::after {
+            content: '*';
+            color: var(--danger-color);
+            margin-left: 4px;
+            font-weight: bold;
+        }
+
+        .data-type {
+            font-family: 'Courier New', Courier, monospace;
+            color: #8e44ad;
+            font-weight: 500;
+        }
+
+        .length {
+            text-align: center;
+            color: #7f8c8d;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+            
+            .schema-header {
+                font-size: 1.2rem;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Database Schema Documentation</h1>
+            <p class="subtitle">Technical reference for application database structure</p>
+        </header>
+
+        <section class="schema-section">
+            <div class="schema-header">
+                <span>User Table</span>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Constraint</th>
+                            <th>Data type</th>
+                            <th>Length</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pk">id</td>
+                            <td>pk</td>
+                            <td class="data-type">integer</td>
+                            <td class="length">10</td>
+                            <td>auto generated.</td>
+                        </tr>
+                        <tr>
+                            <td>name</td>
+                            <td class="not-null">not null</td>
+                            <td class="data-type">nvarchar</td>
+                            <td class="length">30</td>
+                            <td>full name of the user.</td>
+                        </tr>
+                        <tr>
+                            <td>title</td>
+                            <td>null</td>
+                            <td class="data-type">nvarchar</td>
+                            <td class="length">30</td>
+                            <td>title of the user (e.g., Mr, Mrs).</td>
+                        </tr>
+                        <tr>
+                            <td>email</td>
+                            <td class="not-null">not null</td>
+                            <td class="data-type">nvarchar</td>
+                            <td class="length">50</td>
+                            <td>email address of the user.</td>
+                        </tr>
+                        <tr>
+                            <td>phone</td>
+                            <td>null</td>
+                            <td class="data-type">nvarchar</td>
+                            <td class="length">15</td>
+                            <td>phone number of the user.</td>
+                        </tr>
+                        <tr>
+                            <td>created_at</td>
+                            <td class="not-null">not null</td>
+                            <td class="data-type">timestamp</td>
+                            <td class="length">n/a</td>
+                            <td>timestamp when the record is created.</td>
+                        </tr>
+                        <tr>
+                            <td>updated_at</td>
+                            <td class="not-null">not null</td>
+                            <td class="data-type">timestamp</td>
+                            <td class="length">n/a</td>
+                            <td>timestamp when the record was last updated.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="schema-section">
+            <div class="schema-header">
+                <span>Post Table</span>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Constraint</th>
+                            <th>Data type</th>
+                            <th>Length</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pk">id</td>
+                            <td>pk</td>
+                            <td class="data-type">integer</td>
+                            <td class="length">10</td>
+                            <td>auto generated.</td>
+                        </tr>
+                        <tr>
+                            <td>title</td>
+                            <td class="not-null">not null</td>
+                            <td class="data-type">nvarchar</td>
+                            <td class="length">100</td>
+                            <td>title of the post.</td>
+                        </tr>
+                        <tr>
+                            <td>topic</td>
+                            <td class="not-null">not null</td>
+                            <td class="data-type">nvarchar</td>
+                            <td class="length">100</td>
+                            <td>topic of the post.</td>
+                        </tr>
+                        <tr>
+                            <td class="fk">user_id</td>
+                            <td class="not-null">not null, fk</td>
+                            <td class="data-type">integer</td>
+                            <td class="length">10</td>
+                            <td>foreign key linking to the User table.</td>
+                        </tr>
+                        <tr>
+                            <td>created_at</td>
+                            <td class="not-null">not null</td>
+                            <td class="data-type">timestamp</td>
+                            <td class="length">n/a</td>
+                            <td>timestamp when the record is created.</td>
+                        </tr>
+                        <tr>
+                            <td>updated_at</td>
+                            <td class="not-null">not null</td>
+                            <td class="data-type">timestamp</td>
+                            <td class="length">n/a</td>
+                            <td>timestamp when the record was last updated.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <p>Database schema documentation | Generated on <span id="current-date"></span></p>
+        </footer>
+    </div>
+
+    <script>
+        // Add current date to footer
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>
