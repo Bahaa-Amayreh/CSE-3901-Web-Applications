@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+
+<body>
+    <h1></h1>
+    <h3>live List</h3>
+    <ul id="liveList">
+        <li>Item 1</li>
+    </ul>
+    <button id="button1">Add Item</button>
+    <hr>
+    <h3>Static List</h3>
+    <ul id="staticList">
+        <li>Item 1</li>
+    </ul>
+    <button id="button2">Add Item</button>
+    <script>
+        //HTMLCollection is Always Live
+        console.log('Live List');
+        let counterOne = 2
+        let liveItems = document.getElementById("liveList").children;
+        console.log(liveItems);
+        button1 = document.getElementById("button1");
+        button1.addEventListener("click", function () {
+            console.log('Live List');
+            let listItem = document.createElement("li");
+            listItem.textContent = "Item " + counterOne++;
+            document.getElementById("liveList").appendChild(listItem);
+            console.log(liveItems);
+        });
+    </script>
+
+    <script>
+        //The NodeList doesn't update automatically when using querySelectorAll.
+        console.log('Static List');
+        let counterTwo=2;
+        let staticItems = document.querySelectorAll("#staticList li");
+        console.log(staticItems);
+        button2 = document.getElementById("button2");
+        button2.addEventListener("click", function () {
+            console.log('static List');
+            let listItem = document.createElement("li");
+            listItem.textContent = "Item "+counterTwo++;
+            document.getElementById("staticList").appendChild(listItem);
+            console.log(staticItems);
+        });
+    </script>
+</body>
+
+</html>

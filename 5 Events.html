@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation Example</title>
+    <style>
+        #parent {
+            padding: 20px;
+            background-color: lightblue;
+        }
+
+        #child {
+            padding: 20px;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="parent">
+        Parent Element
+        <div id="child">
+            Child Element
+        </div>
+    </div>
+
+
+    <p>Explanation of the Example</p>
+    <ol>
+        <li><strong>HTML Structure:</strong> A parent <code>&lt;div&gt;</code> containing a child
+            <code>&lt;div&gt;</code>.
+        </li>
+        <li><strong>Event Listeners:</strong>
+            <ol type="a">
+                <li><strong>Capture Phase:</strong> The parent listener will execute first when the event is captured
+                    (<code>true</code> flag).</li>
+                <li><strong>Target Phase:</strong> If you click on the child element, the child’s event listener is
+                    executed next, displaying its alert.</li>
+                <li><strong>Bubble Phase:</strong> If you do not stop propagation in the child’s event handler, the
+                    parent’s listener will execute after the child’s listener, showing its alert.</li>
+            </ol>
+        </li>
+    </ol>
+
+    <p>Summary</p>
+    <ol>
+        <li><strong>Event Propagation:</strong> Refers to the way events are handled in a DOM tree structure.</li>
+        <li><strong>Phases:</strong> Events go through three phases: Capture (down), Target (at the element), and Bubble
+            (up).</li>
+        <li><strong>Event Listeners:</strong> Can be set to trigger during capture, target, or bubble phases, allowing
+            for flexible event handling.</li>
+    </ol>
+
+    <script>
+        // Parent event listener
+        document.getElementById('parent').addEventListener('click', function () {
+            alert('Parent Clicked (Bubble Phase)');
+            //event.stopPropagation();
+        }, false);
+
+        // Child event listener (target)
+        document.getElementById('child').addEventListener('click', function (event) {
+            alert('Child Clicked (Target Phase)');
+            // Prevent the event from bubbling up to the parent
+           event.stopPropagation();
+        });
+
+        // Parent event listener with capture
+        document.getElementById('parent').addEventListener('click', function () {
+            alert('Parent Clicked (Capture Phase)');
+            // event.stopPropagation();
+        }, true); // `true` for capture
+    </script>
+
+</body>
+
+</html>
