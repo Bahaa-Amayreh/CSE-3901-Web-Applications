@@ -2,25 +2,261 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Font Example</title>
-
-    <!-- Link to a Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link to Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Comprehensive HTML Tags Using the Google Font Poppins</title>
     <style>
         body {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 40px;
+        }
+
+        section {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        footer {
             text-align: center;
-            padding: 50px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .custom-size {
+            width: 300px;
+            height: 200px;
+            border: 2px solid red;
         }
     </style>
 </head>
 
 <body>
-    <h1>Hello World!</h1>
-    <p>This font is loaded directly from Google Fonts.</p>
+    <header>
+        <h1>Comprehensive HTML Tags Demonstration</h1>
+        <p>These texts use Google Font "Poppins"</p>
+    </header>
+
+    <main>
+        <!-- Headings -->
+        <section>
+            <h2>Headings (<code>h1</code>–<code>h6</code>)</h2>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+        </section>
+        <!-- <div> = block, <span> = inline -->
+        <section>
+            <h3>&lt;div&gt;</h3>
+            <p>Block element; groups large sections of content.</p>
+            <h3>&lt;span&gt;</h3>
+            <p>Inline element; styles or targets part of text.</p>
+        </section>
+
+        <!-- Text Formatting -->
+        <section>
+            <h2>Text Formatting Tags</h2>
+            <p><strong>&lt;strong&gt;</strong> - makes text <strong>bold</strong>.</p>
+            <p><em>&lt;em&gt;</em> - emphasize text <em>Visually, it will appear italicized, but semantically it signals
+                    emphasis</em>.</p>
+            <p><u>&lt;u&gt;</u> - <u>underlines text</u>.</p>
+            <p><mark>&lt;mark&gt;</mark> - <mark>highlights text</mark>.</p>
+            <p><sup>&lt;sup&gt;</sup> and <sub>&lt;sub&gt;</sub> - represent <sup>superscript</sup> and
+                <sub>subscript</sub>.
+            </p>
+            <p><abbr title="HyperText Markup Language">&lt;abbr&gt;</abbr> — Example: <abbr
+                    title="HyperText Markup Language">HTML</abbr></p>
+            <p><q>&lt;q&gt;</q> — Short inline quote: <q>Knowledge is power.</q></p>
+            <blockquote cite="https://example.com"><strong>&lt;blockquote&gt;</strong> — Used for longer quotations.
+            </blockquote>
+        </section>
+
+        <!-- Links and Images -->
+        <section>
+            <h2>Links and Images</h2>
+            <p>Anchor tag <code>&lt;a&gt;</code>: <a href="https://www.mozilla.org" target="_blank">Visit Mozilla</a>
+            </p>
+            <p>Image tag <code>&lt;img&gt;</code>:</p>
+            <img src="https://images.unsplash.com/photo-1758641008040-28cdd59ca8fb?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687"
+                alt="Placeholder image" class="custom-size">
+            <p>Line break tag <code>&lt;br&gt;</code>:<br>This text appears after a line break.</p>
+        </section>
+
+        <!-- Lists -->
+        <section>
+            <h2>List Tags</h2>
+            <h3>Unordered List (<code>&lt;ul&gt;</code>)</h3>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Cherry</li>
+            </ul>
+
+            <h3>Ordered List (<code>&lt;ol&gt;</code>)</h3>
+            <ol>
+                <li>Step One</li>
+                <li>Step Two</li>
+                <li>Step Three</li>
+            </ol>
+
+            <h3>Description List (<code>&lt;dl&gt;</code>)</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>A markup language for creating web pages.</dd>
+                <dt>CSS</dt>
+                <dd>Used for styling HTML elements.</dd>
+            </dl>
+        </section>
+
+        <!-- Tables -->
+        <section>
+            <h2>Table Tag</h2>
+            <p>Tables are defined with <code>&lt;table&gt;</code>, containing rows (<code>&lt;tr&gt;</code>) and cells
+                (<code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>).</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Language</th>
+                        <th>Type</th>
+                        <th>Popular Framework</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>Frontend/Backend</td>
+                        <td>React</td>
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                        <td>Backend</td>
+                        <td>Django</td>
+                    </tr>
+                    <tr>
+                        <td>Java</td>
+                        <td>Backend</td>
+                        <td>Spring</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Forms -->
+        <section>
+            <h2>Form Elements</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name"><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email"><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" rows="4" cols="40" placeholder="Type your message..."></textarea><br><br>
+
+                <label>Choose a color:</label>
+                <input type="color" name="color"><br><br>
+
+                <p>Gender:</p>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br><br>
+
+                <label for="vehicle">Select vehicles:</label><br>
+                <input type="checkbox" id="car"> <label for="car">Car</label><br>
+                <input type="checkbox" id="bike"> <label for="bike">Bike</label><br><br>
+
+                <label for="country">Country:</label>
+                <select id="country">
+                    <option value="">Choose...</option>
+                    <option value="usa">USA</option>
+                    <option value="uk">UK</option>
+                    <option value="india">India</option>
+                </select><br><br>
+
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+        </section>
+
+        <!-- Semantic Tags -->
+        <section>
+            <h2>Semantic HTML Tags</h2>
+            <article>
+                <h3>&lt;article&gt; Example</h3>
+                <p>An article represents a self-contained composition such as a blog post or news entry.</p>
+            </article>
+
+            <aside>
+                <h3>&lt;aside&gt; Example</h3>
+                <p>Used for side content, such as related links or ads.</p>
+            </aside>
+
+            <nav>
+                <h3>&lt;nav&gt;</h3>
+                <p>The navigation bar contains links to main sections:</p>
+                <a href="#home">Home</a> |
+                <a href="#services">Services</a> |
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <section>
+                <h3>&lt;section&gt;</h3>
+                <p>Defines a thematic grouping of content, typically with a heading.</p>
+            </section>
+        </section>
+
+        <section>
+
+            <p>
+            <h3>lorem</h3>
+            In VS Code, typing <code>lorem</code> or <code>lorem200</code> and then pressing Tab will automatically
+            generate Lorem Ipsum placeholder text.
+            The number after <code>lorem</code> specifies how many words to generate, e.g., <code>lorem20</code>
+            generates 20 words.
+            </p>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HTML Demonstration Page.</p>
+    </footer>
 </body>
 
 </html>
