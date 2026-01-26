@@ -11,13 +11,7 @@ puts "fname.equal?('Alex'): #{fname.equal?('Alex')}"
 # false --> different object (different memory location)
 puts "lname.equal? 'David': #{lname.equal?('David')}"
 # false --> different object (different memory location)
-puts "fname.equal? 'Alex': #{fname.equal?('Alex')}"
-# false -->  different object (different memory location)
-puts "lname.equal? 'David': #{lname.equal?('David')}"
-# false -->  different object (different memory location)
-
-# Immediate types: small integers, small floats, true, false, nil, symbols
-puts "age == 20: #{age == 20}"
+puts "age == 20: #{age == 20}"   # Immediate types: small integers, small floats, true, false, nil, symbols
 # true (primitive-like comparison)
 puts "age.equal? 20: #{age.equal? 20}"
 puts "marks == [96, 92, 88]: #{marks == [96, 92, 88]}"
