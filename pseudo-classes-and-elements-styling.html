@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Classes and Spans in HTML</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .warning {
+        border: 1px solid rgb(4, 255, 0);
+        padding: 10px;
+      }
+
+      .draft {
+        color: rgb(18, 153, 5);
+      }
+
+      .university {
+        font-style: italic;
+        /* border:dashed red; */
+      }
+      .warning .university {
+        border: dashed red;
+      }
+      a:hover {
+        background: green;
+        color: rgb(197, 240, 7);
+      }
+
+      tbody tr:nth-of-type(odd) {
+        background: #ccc;
+      }
+      th::after {
+        content: '!';
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1></h1>
+
+    <div class="warning">
+      <h2>
+        <span class="university">University of Michigan</span>
+      </h2>
+
+      <p class="draft">
+        <a href="https://ope.engin.umich.edu/pe/">
+          <em>UM</em>
+        </a>
+        <br />
+        <img src="" alt="UM" />
+      </p>
+    </div>
+
+    <h2></h2>
+    <p>
+      <span class="university"> <em>The</em> Ohio State University </span>
+    </p>
+    <blockquote class="draft">
+      Vision, Mission and Values: Through reflection, evaluation and meaningful
+      action, we aim to reinforce our ethical culture and live these shared
+      values to advance our core work of teaching, learning, research and
+      service.
+      <a href="https://www.osu.edu/shared-values" target="_blank">more </a>
+    </blockquote>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Student Name</th>
+          <th>Major</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Alice Johnson</td>
+          <td>Computer Science</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Michael Smith</td>
+          <td>Information Systems</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Sarah Brown</td>
+          <td>Software Engineering</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>David Lee</td>
+          <td>Mathematics</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <br />
+
+    <a href="https://0xedward.github.io/dom-visualizer/" target="_blank">
+      DOM Visualizer
+    </a>
+  </body>
+</html>
