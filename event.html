@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Div Click Toggle Example</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        margin: 25px;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <script>
+      'use strict'
+      let divs = document.querySelectorAll('div')
+      for (let d of divs) {
+        d.addEventListener('click', (event) => {
+          let t = event.currentTarget
+          // toggle the custom act property
+          t.act = t.act || false
+          t.act = !t.act
+          // set background color based on act
+          t.style.backgroundColor = t.act ? 'red' : 'gray'
+        })
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Simple Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      input {
+        width: 160px;
+        padding: 5px;
+        margin: 2px;
+        font-size: 16px;
+        color: blue;
+      }
+
+      button {
+        padding: 6px 10px;
+        margin: 5px;
+        font-size: 20px;
+      }
+
+      button:hover {
+        background-color: #0852dc;
+      }
+
+      #result {
+        font-weight: bold;
+        color: rgb(2, 131, 236);
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="num1" placeholder="First number" />
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+    <input type="text" id="num2" placeholder="Second number" />
+    <span>=</span>
+    <span id="result" style="font-weight: bold"></span>
+    <script>
+      function calculate(op) {
+        let n1 = Number(document.getElementById('num1').value)
+        console.log(n1)
+        let n2 = Number(document.getElementById('num2').value)
+        let result
+        if (op === '+') result = n1 + n2
+        else if (op === '-') result = n1 - n2
+        else if (op === '*') result = n1 * n2
+        else result = n1 / n2
+        document.getElementById('result').innerText = result
+      }
+    </script>
+  </body>
+</html>
